@@ -217,6 +217,18 @@ cbd 引擎测试可以避免 nbd 挂载带来的额外开销，在单卷测试�
 
 为了方便编译，如下命令以在 curveadm map 创建的容器内执行
 
+> 进入容器
+> ```bash
+> curve@hostname:~$ curveadm client status
+> Get Client Status: [OK]
+>
+> Id            Kind     Host    Container Id  Status     Aux Info
+> --            ----     ----    ------------  ------     --------
+> 5f1c10fd4d71  curvebs  curve1  dcbb6b69028e  Up 9 days  {"user":"test","volume":"/curve"}
+> 
+> curve@hostname:~$ curveadm client enter 5f1c10fd4d71  # 替换为上面输出的实际Id
+> ```
+
 ```bash
 $ git clone https://github.com/opencurve/fio.git -b curve
 $ cd fio
